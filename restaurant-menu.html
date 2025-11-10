@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixel Pals Café</title>
+    <style>
+        body {
+            margin:0;
+            padding: 0;
+            font-family: "Verdana", "Trebuchet MS", sans-serif;
+            background-color: #ffeefc; /* soft pink */
+            color: #4b3b47; /* soft brown */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffc8f0;
+            border-bottom: 4px solid #ff9dd9;
+        }
+
+        #header-img {
+            width: 120px;
+            height: auto;
+            image-rendering: pixelated; /* cute retro feel if img is low-res */
+        }
+
+        h1 {
+            margin: 10px 0 5px;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b3b47;
+            font-weight: bold;
+            padding: 4px 8px;
+            border: 2px solid #ff9dd9;
+            border-radius: 6px;
+        }
+
+        nav a:hover {
+            background-color: #ff9dd9;
+            color: #fff;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff7ff;
+            border: 3px solid #ff9dd9;
+            border-radius: 12px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+
+        #menu article {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 8px;
+            border: 2px dashed #ffc8f0;
+            border-radius: 10px;
+        }
+
+        #menu article img {
+            image-rendering: pixelated;
+            border-radius: 6px;
+        }
+
+        #order-form form div,
+        #order-form fieldset {
+            margin-bottom: 12px;
+        }
+
+        fieldset {
+            border: 2px solid #ffc8f0;
+            border-radius: 8px;
+            padding: 8px;
+            background-color: #fff7ff;
+        }
+
+        input[type="number"],
+        textarea {
+            border: 2px solid #ffc8f0;
+            border-radius: 6px;
+            padding: 4px;
+            background-color: #fff;
+        }
+
+        input[type="submit"] {
+            padding: 8px 16px;
+            border: 2px solid #ff9dd9;
+            border-radius: 8px;
+            background-color: #ffc8f0;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff9dd9;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ffc8f0;
+            border-top: 4px solid #ff9dd9;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img id="header-img" src="assets/cafe-logo.png" alt="Pixel Pals Café logo">
+        <h1>Pixel Pals Café</h1>
+        <p>Cute bites & cozy vibes ✧₊⁺</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#menu">Menu</a>
+            </li>
+            <li>
+                <a href="#order-form">Order Form</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="menu">
+            <h2>Menu</h2>
+
+            <article>
+                <img src="assets/item1.png" alt="Strawberry Pixel Pancakes" width="100">
+                <h3>Strawberry Pixel Pancakes</h3>
+                <p>Fluffy mini pancakes topped with pink strawberry syrup and star sprinkles. <em>$6.50</em> </p>
+            </article>
+            
+            <article>
+                <img src="assets/item2.png" alt="Neko Bento Box" width="100">
+                <h3>Neko Bento Box</h3>
+                <p>Rice, katsu, veggies and a tiny onigiri cat face. <em>$9.50</em></p>
+            </article>
+
+            <article>
+                <img src="assets/item3.png" alt="Bubble Tea Galaxy" width="100">
+                <h3>Bubble Tea Galaxy</h3>
+                <p>Creamy milk tea with pastel boba and edible glitter. <em>$4.50</em></p>
+            </article>
+        </section>
+
+        <section id="order-form">
+            <h2>Place Your Order</h2>
+
+            <form>
+                <!--- Step 5A - quantities -->
+                <div>
+                    <label for="pancakes-qty">Strawberry Pixel Pancakes:</label>
+                    <input type="number" id="pancakes-qty" name="pancakes-qty" min="0" value="0">
+                </div>
+
+                <div>
+                    <label for="bento-qty">Neko Bento Box:</label>
+                    <input type="number" id="bento-qty" name="bento-qty" min="0" value="0">
+                </div>
+
+                <div>
+                    <label for="boba-qty">Bubble Tea Galaxy:</label>
+                    <input type="number" id="boba-qty" name="boba-qty" min="0" value="0">
+                </div>
+                <br/>
+
+                <!--- Step 5B - add-ons -->
+
+                <fieldset>
+                    <legend>Choose your add-ons:</legend>
+
+                    <div>
+                        <input type="checkbox" id="extra-boba" name="add-ons" value="extra-boba">
+                        <label for="extra-boba">Extra boba</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="mochi" name="add-ons" value="mochi">
+                        <label for="mochi">Mochi bites</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="sprinkles" name="add-ons" value="sprinkles">
+                        <label for="sprinkles">Star sprinkles</label>
+                    </div>
+                </fieldset>
+                <br/>
+
+                <fieldset>
+                    <legend>Pickup or Delivery?</legend>
+
+                    <div>
+                        <input type="radio" id="pickup" name="order-type" value="pickup" checked>
+                        <label for="pickup">Pickup</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="delivery" name="order-type" value="delivery">
+                        <label for="delivery">Delivery</label>
+                    </div>
+                </fieldset>
+                <br/>
+
+                <!--- Step 5C - textarea for special requests -->
+
+                <div>
+                    <label for="requests">Special Requests:</label><br/>
+                    <textarea id="requests" name="requests" rows="4" cols="40" maxlength="250" placeholder="No ice, extra cute, write a message on my bento ♡"></textarea>    
+                </div>
+                <br/>
+
+                <!--- Step 5D - submit -->
+
+                <div>
+                    <input type="submit" value="Go To Checkout">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with ♡ by Bia</p>
+    </footer>
+</body>
+</html>
